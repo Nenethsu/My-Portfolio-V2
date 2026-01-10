@@ -1,6 +1,6 @@
-import "./App.css";
+import "./styles/App.css";
 import MainLayout from "./layout/MainLayout";
-import "./index.css";
+import "./styles/index.css";
 
 function App() {
   return <MainLayout />;

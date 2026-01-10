@@ -67,7 +67,7 @@ const Navbar = () => {
 
                   <a
                     href={link.href}
-                    className={`uppercase transition-colors hover:font-semibold tracking-wider
+                    className={`uppercase transition-colors font-medium hover:font-semibold tracking-wider
     ${
       activeSection === section
         ? "text-blue-500 font-semibold"
