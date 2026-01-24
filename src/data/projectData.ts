@@ -1,4 +1,5 @@
 import portfolio from "../assets/portfolio.jpg";
+import portfolioV1 from "../assets/portfolioV1.jpg";
 import taytay from "../assets/taytay.jpg";
 import guideurself from "../assets/guideurself.jpg";
 
@@ -15,17 +16,28 @@ export interface ProjectCardProps {
 export const projectsData = [
   {
     id: 1,
-    title: "Personal Portfolio",
+    title: "Personal Portfolio V1",
     type: "Frontend",
     description:
-      "My portfolio website , created using ReactJS and TailwindCSS.",
-    image: portfolio,
+      "My first version portfolio website , created using HTML and CSS.",
+    image: portfolioV1,
     link: "https://nenethss.github.io/KennethSanPedro/",
-    codelink: "https://github.com/Nenethss/My-Portfolio-V2",
+    codelink: "https://github.com/Nenethss/KennethSanPedro",
     date: "December 23, 2025",
   },
   {
     id: 2,
+    title: "Personal Portfolio V2",
+    type: "Frontend",
+    description:
+      "My second version portfolio website , created using ReactJS and TailwindCSS.",
+    image: portfolio,
+    link: "https://sanpedrokenneth.netlify.app/",
+    codelink: "https://github.com/Nenethss/My-Portfolio-V2",
+    date: "May 23, 2023",
+  },
+  {
+    id: 3,
     title: "E-Tiangge Taytay",
     type: "Fullstack",
     description:
@@ -36,7 +48,7 @@ export const projectsData = [
     date: "March 15, 2025",
   },
   {
-    id: 3,
+    id: 4,
     title: "GuideURSelf",
     type: "Fullstack",
     description:

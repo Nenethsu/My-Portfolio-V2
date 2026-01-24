@@ -32,27 +32,33 @@ export const skillsData = [
   },
   {
     id: 6,
+    skill: "Express JS",
+
+    img: "https://img.icons8.com/?size=1200&id=SDVmtZ6VBGXt&format=jpg",
+  },
+  {
+    id: 7,
     skill: "MongoDB",
     img: "https://img.icons8.com/?size=100&id=tBBf3P8HL0vR&format=png&color=000000",
   },
   {
-    id: 7,
+    id: 8,
     skill: "Git",
     img: "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
   },
   {
-    id: 8,
+    id: 9,
     skill: "GitHub",
     img: "https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000",
   },
   {
-    id: 9,
+    id: 10,
     skill: "VS Code",
     img: "https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000",
   },
   {
-    id: 10,
-    skill: "Tailwind",
+    id: 11,
+    skill: "Tailwind CSS",
     img: "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000",
   },
 ];
