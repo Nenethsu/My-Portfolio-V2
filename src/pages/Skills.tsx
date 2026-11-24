@@ -1,7 +1,9 @@
 import { FaCss3Alt, FaHtml5, FaJsSquare, FaNodeJs, FaReact } from "react-icons/fa";
 import { FiCode } from "react-icons/fi";
 import { SiExpress, SiGit, SiGithub, SiMongodb, SiMysql, SiObsidian, SiOpenai, SiTailwindcss } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 import type { IconType } from "react-icons";
+import { PlaywrightIcon, TanStackIcon } from "../components/Skills/BrandIcons";
 
 const skillIcons: Record<string, IconType> = {
   HTML: FaHtml5,
@@ -16,10 +18,12 @@ const skillIcons: Record<string, IconType> = {
   NativeWind: SiTailwindcss,
   Git: SiGit,
   GitHub: SiGithub,
-  "VS Code": FiCode,
+  "VS Code": VscVscode,
   "Tailwind CSS": SiTailwindcss,
   "Prompt Engineering": SiOpenai,
   Obsidian: SiObsidian,
+  Playwright: PlaywrightIcon,
+  TanStack: TanStackIcon,
 };
 
 const categories = [
