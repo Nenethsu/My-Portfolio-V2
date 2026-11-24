@@ -1,6 +1,6 @@
 import { socials } from "../data/socials";
 
-export const Social = () => {
+const Social = () => {
   return (
     <div className="hidden xl11:flex flex-col justify-end gap-3 p-4">
       {socials.map(({ icon: Icon, url }, index) => (
@@ -17,3 +17,5 @@ export const Social = () => {
     </div>
   );
 };
+
+export default Social;

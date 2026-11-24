@@ -2,10 +2,10 @@ import Header from "../components/Header/Header";
 import Type from "../components/Project/Type";
 import { projectsData } from "../data/projectData";
 import ProjectsCard from "../components/Project/ProjectsCard";
-import { Social } from "../components/Social";
+import Social from "../components/Social";
 import { useState } from "react";
 
-function Projects() {
+const Projects = () => {
   const [activeType, setActiveType] = useState("All");
 
   const filteredProjects =

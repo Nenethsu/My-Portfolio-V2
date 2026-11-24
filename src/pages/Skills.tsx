@@ -1,9 +1,9 @@
 import Header from "../components/Header/Header";
 import Experience from "../components/Skills/Experience";
 import SkillContainer from "../components/Skills/SkillContainer";
-import { Social } from "../components/Social";
+import Social  from "../components/Social";
 
-function Skills() {
+const Skills = () => {
   return (
     <div className="min-h-[100vh] pt-[70px] dark:bg-[#252525] bg-[#fff] flex gap-6 mx-auto">
       <Social />

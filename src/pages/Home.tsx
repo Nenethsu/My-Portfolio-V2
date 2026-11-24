@@ -1,6 +1,6 @@
 import Hero from "../components/Home/Hero";
 import HeroImage from "../components/Home/HeroImage";
-import { Social } from "../components/Social";
+import  Social  from "../components/Social";
 
 const Home = () => {
   return (

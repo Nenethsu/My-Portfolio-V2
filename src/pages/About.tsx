@@ -1,7 +1,7 @@
 import About from "../components/About/About";
 import AboutImage from "../components/About/AboutImage";
 import Header from "../components/Header/Header";
-import { Social } from "../components/Social";
+import  Social  from "../components/Social";
 
 const Home = () => {
   return (

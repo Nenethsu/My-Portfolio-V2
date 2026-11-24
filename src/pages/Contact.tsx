@@ -1,10 +1,10 @@
 import Header from "../components/Header/Header";
-import { Social } from "../components/Social";
+import Social from "../components/Social";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast"; // ← Add this import
 
-function Contact() {
+const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent) => {

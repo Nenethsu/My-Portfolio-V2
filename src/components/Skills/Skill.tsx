@@ -1,6 +1,6 @@
 import type { SkillProps } from "../../data/skillsData";
 
-function Skill({ img, skill }: SkillProps) {
+const Skill = ({ img, skill }: SkillProps) => {
   return (
     <div className="flex flex-col items-center gap-2 md:mr-0">
       <div

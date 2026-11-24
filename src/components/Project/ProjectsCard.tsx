@@ -1,7 +1,7 @@
 import type { ProjectCardProps } from "../../data/projectData";
 import { FaEye, FaGithub } from "react-icons/fa";
 
-function ProjectsCard({
+const ProjectsCard = ({
   image,
   title,
   description,
@@ -9,7 +9,7 @@ function ProjectsCard({
   link,
   codelink,
   date,
-}: ProjectCardProps) {
+}: ProjectCardProps) => {
   return (
     <div
       className="py-4 px-6 rounded-lg min-w-[250px] max-w-[350px] shadow-[0_0_25px_rgba(0,0,0,0.2)]
