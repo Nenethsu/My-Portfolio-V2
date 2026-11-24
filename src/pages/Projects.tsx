@@ -1,45 +1,17 @@
-import Header from "../components/Header/Header";
-import Type from "../components/Project/Type";
+import { useMemo, useState } from "react";
+import { FiCalendar, FiExternalLink, FiGithub, FiSearch } from "react-icons/fi";
 import { projectsData } from "../data/projectData";
-import ProjectsCard from "../components/Project/ProjectsCard";
-import Social from "../components/Social";
-import { useState } from "react";
 
 const Projects = () => {
   const [activeType, setActiveType] = useState("All");
+  const [query, setQuery] = useState("");
+  const types = ["All", "Frontend"];
+  const filteredProjects = useMemo(() => projectsData.filter((project) => (activeType === "All" || project.type === activeType) && `${project.title} ${project.description} ${project.technologies.join(" ")}`.toLowerCase().includes(query.toLowerCase())), [activeType, query]);
 
-  const filteredProjects =
-    activeType === "All"
-      ? projectsData
-      : projectsData.filter((project) => project.type === activeType);
-
-  return (
-    <div className="min-h-[100vh] pt-[70px] dark:bg-[#252525] bg-[#fff] flex flex-row gap-6">
-      <Social />
-      <div className="mx-auto flex flex-col w-full gap-4">
-        <Header
-          subtitle="Take a look at some of my projects"
-          initial="My "
-          title="Projects"
-        />
-        <Type activeType={activeType} onChangeType={setActiveType} />
-        <div className="md:px-20 px-6 h-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-4 pb-16 justify-items-center">
-          {filteredProjects.map((project) => (
-            <ProjectsCard
-              key={project.id}
-              title={project.title}
-              type={project.type}
-              description={project.description}
-              image={project.image}
-              link={project.link}
-              codelink={project.codelink}
-              date={project.date}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+  return <div className="space-y-5"><div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="section-eyebrow">Work library</p><h2 className="section-title">Projects</h2><p className="section-copy">Browse the applications and interfaces I&apos;ve built across front-end and full-stack work.</p></div><div className="relative w-full sm:w-64"><FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects" className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-3 text-sm outline-none transition focus:border-blue-400 dark:border-slate-800 dark:bg-slate-900 dark:text-white dark:focus:border-blue-600" /></div></div>
+    <div className="flex flex-wrap gap-2">{types.map((type) => <button key={type} onClick={() => setActiveType(type)} className={`rounded-lg px-3 py-2 text-xs font-semibold transition ${activeType === type ? "bg-blue-600 text-white" : "border border-slate-200 bg-white text-slate-600 hover:border-blue-300 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-blue-700"}`}>{type}</button>)}</div>
+    {filteredProjects.length ? <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{filteredProjects.map((project) => <article key={project.id} className="dashboard-panel group overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-xl"><div className="relative overflow-hidden"><img src={project.image} alt={project.title} className="h-48 w-full object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-4 top-4 rounded-md bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-700 dark:bg-slate-950/90 dark:text-blue-400">{project.type}</span></div><div className="flex flex-col gap-4 p-5"><div><h3 className="text-base font-bold text-slate-950 dark:text-white">{project.title}</h3><p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">{project.description}</p></div><div className="flex flex-wrap gap-1.5">{project.technologies.map((technology) => <span key={technology} className="rounded-md bg-slate-100 px-2 py-1 text-[10px] font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-400">{technology}</span>)}</div><div className="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"><span className="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400"><FiCalendar /> {project.date}</span><div className="flex gap-2"><a href={project.link} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:hover:border-blue-700" aria-label={`Open ${project.title} live demo`}><FiExternalLink /></a><a href={project.codelink} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:hover:border-blue-700" aria-label={`Open ${project.title} source code`}><FiGithub /></a></div></div></div></article>)}</div> : <div className="dashboard-panel p-10 text-center text-sm text-slate-500">No projects match your search.</div>}
+  </div>;
+};
 
 export default Projects;

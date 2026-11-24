@@ -1,108 +1,18 @@
-import Header from "../components/Header/Header";
-import Social from "../components/Social";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import toast from "react-hot-toast"; // ← Add this import
+import toast from "react-hot-toast";
+import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
-
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const sendEmail = (event: React.FormEvent) => {
+    event.preventDefault();
     const sendingToast = toast.loading("Sending your message...");
-
-    if (formRef.current) {
-      emailjs
-        .sendForm(
-          "service_kjmwztj",
-          "template_v26016l",
-          formRef.current,
-          "VYnyVI5S5FY0jPK0N"
-        )
-        .then(
-          () => {
-            toast.success("Message sent successfully!", {
-              id: sendingToast,
-            });
-            formRef.current?.reset();
-          },
-          (error) => {
-            toast.error("Failed to send. Please try again.", {
-              id: sendingToast,
-            });
-            console.error(error);
-          }
-        );
-    }
+    if (!formRef.current) return;
+    emailjs.sendForm("service_kjmwztj", "template_v26016l", formRef.current, "VYnyVI5S5FY0jPK0N").then(() => { toast.success("Message sent successfully!", { id: sendingToast }); formRef.current?.reset(); }, (error) => { toast.error("Failed to send. Please try again.", { id: sendingToast }); console.error(error); });
   };
 
-  return (
-    <div className="min-h-[100vh] pt-[70px] flex">
-      <Social />
-      <div className="flex flex-col gap-6 xl11:gap-0 items-center mx-auto justify-items-center px-6 pb-[100px]">
-        <Header subtitle="Let's talk about it!" initial="Contact " title="Me" />
-        <div className="pt-12 w-full">
-          <form
-            ref={formRef}
-            onSubmit={sendEmail}
-            className="flex flex-col gap-4 w-full max-w-xl mx-auto"
-          >
-            <input
-              className="p-3 rounded-md dark:bg-[#252525] w-full focus:outline-none text-[13px]"
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
-            <input
-              className="p-3 rounded-md dark:bg-[#252525] w-full focus:outline-none text-[13px]"
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              className="p-3 rounded-md dark:bg-[#252525] h-[150px] w-full focus:outline-none text-[13px] resize-none"
-              name="message"
-              placeholder="Your Message"
-              required
-            />
-            <button
-              type="submit"
-              className="p-3 my-4 bg-blue-500 hover:bg-blue-600 text-white rounded-md text-[14px] font-medium transition"
-            >
-              Send Message
-            </button>
-
-            <div className="flex sm:flex-col md:flex-col lg:flex-row flex-col gap-4 pt-2">
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=kennethsanpedro1108@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="lg:w-[50%]  dark:bg-[#252525] bg-[#fff] px-12 py-2 rounded-lg flex items-center justify-center gap-4 cursor-pointer  dark:hover:bg-[#2e2e2e]"
-              >
-                <img
-                  className="w-[25px] h-[25px]"
-                  src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000"
-                  alt="Gmail"
-                />
-                <p className="text-[12px]">kennethsanpedro1108@gmail.com</p>
-              </a>
-              <div className="lg:w-[50%] w-full dark:bg-[#252525] bg-[#fff] px-4 py-2 rounded-lg flex items-center justify-center gap-4">
-                <img
-                  className="w-[25px] h-[25px]"
-                  src="https://img.icons8.com/?size=100&id=9730&format=png&color=3B82F6"
-                  alt="Phone"
-                />
-                <p className="text-[12px]">+639267353866</p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}
+  return <div className="space-y-5"><div><p className="section-eyebrow">Get in touch</p><h2 className="section-title">Contact</h2><p className="section-copy">Have an opportunity or a project in mind? Send a message and I&apos;ll get back to you.</p></div><div className="grid gap-5 lg:grid-cols-[0.75fr_1.25fr]"><div className="dashboard-panel space-y-5 p-6"><div><h3 className="text-lg font-bold text-slate-950 dark:text-white">Let&apos;s talk</h3><p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">I&apos;m open to conversations about internships, front-end development, and collaborative projects.</p></div><div className="space-y-3 text-sm"><a href="mailto:kennethsanpedro1108@gmail.com" className="flex items-center gap-3 text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"><FiMail className="text-blue-600" /> kennethsanpedro1108@gmail.com</a><p className="flex items-center gap-3 text-slate-600 dark:text-slate-400"><FiPhone className="text-blue-600" /> +639267353866</p><p className="flex items-center gap-3 text-slate-600 dark:text-slate-400"><FiMapPin className="text-blue-600" /> Binangonan, Rizal, Philippines</p></div><div className="flex gap-2 border-t border-slate-100 pt-5 dark:border-slate-800"><a href="https://github.com/Nenethsu" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-lg border border-slate-200 p-2.5 hover:border-blue-300 hover:text-blue-600 dark:border-slate-700"><FiGithub /></a><a href="https://www.instagram.com/nenethss" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-lg border border-slate-200 p-2.5 hover:border-blue-300 hover:text-blue-600 dark:border-slate-700"><FiInstagram /></a><a href="https://www.linkedin.com/in/san-pedro-kenneth-j-49933329a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-lg border border-slate-200 p-2.5 hover:border-blue-300 hover:text-blue-600 dark:border-slate-700"><FiLinkedin /></a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=kennethsanpedro1108@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Open Gmail" className="ml-auto inline-flex items-center gap-2 rounded-lg bg-blue-600 px-3 text-xs font-semibold text-white hover:bg-blue-700">Open Gmail <FiArrowUpRight /></a></div></div><form ref={formRef} onSubmit={sendEmail} className="dashboard-panel space-y-4 p-6"><div className="grid gap-4 sm:grid-cols-2"><label className="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400">Your name<input name="name" type="text" required placeholder="Your Name" className="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 p-3 text-sm font-normal outline-none focus:border-blue-400 dark:border-slate-800 dark:bg-slate-950 dark:text-white" /></label><label className="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400">Your email<input name="email" type="email" required placeholder="you@example.com" className="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 p-3 text-sm font-normal outline-none focus:border-blue-400 dark:border-slate-800 dark:bg-slate-950 dark:text-white" /></label></div><label className="block space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400">Message<textarea name="message" required placeholder="Tell me a little about your project..." className="mt-1 h-36 w-full resize-none rounded-xl border border-slate-200 bg-slate-50 p-3 text-sm font-normal outline-none focus:border-blue-400 dark:border-slate-800 dark:bg-slate-950 dark:text-white" /></label><button type="submit" className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Send message <FiArrowUpRight className="ml-2" /></button></form></div></div>;
+};
 
 export default Contact;

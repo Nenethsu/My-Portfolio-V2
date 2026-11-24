@@ -1,25 +1,6 @@
-import About from "../components/About/About";
-import AboutImage from "../components/About/AboutImage";
-import Header from "../components/Header/Header";
-import  Social  from "../components/Social";
+import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
+import AboutImage from "../assets/AboutImage.png";
 
-const Home = () => {
-  return (
-    <div className="min-h-[100vh] flex w-full overflow-x-hidden">
-      <Social />
-      <div className="flex flex-col pt-[70px] gap-16 xl11:gap-0 items-center mx-auto">
-        <Header
-          subtitle="Let me introduce myself"
-          initial="About "
-          title="Me"
-        />
-        <div className="flex flex-col xl11:flex-row px-12 gap-10">
-          <AboutImage />
-          <About />
-        </div>
-      </div>
-    </div>
-  );
-};
+const About = () => <div className="space-y-5"><div><p className="section-eyebrow">Profile</p><h2 className="section-title">About Me</h2><p className="section-copy">A little context about the person behind the projects.</p></div><div className="dashboard-panel grid gap-8 p-6 sm:p-8 lg:grid-cols-[240px_1fr] lg:items-center"><div className="flex justify-center"><img src={AboutImage} alt="About Kenneth San Pedro" className="h-56 w-56 object-contain" /></div><div><h3 className="text-2xl font-bold text-slate-950 dark:text-white">Aspiring web developer</h3><p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">I&apos;m an aspiring web developer from Binangonan, Rizal, Philippines. I have a strong interest in games and programming, which I explore during my free time, and I primarily specialize in front-end web development.</p><p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">My programming journey became more focused as a fourth-year IT student preparing for my internship. With graduation approaching, I&apos;m motivated to continuously improve my skills and contribute to thoughtful, user-friendly experiences.</p><div className="mt-6 flex flex-wrap gap-3"><a href="https://github.com/Nenethsu" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:hover:border-blue-700"><FiGithub /> GitHub <FiArrowUpRight /></a><a href="https://www.instagram.com/nenethss" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:hover:border-blue-700"><FiInstagram /> Instagram <FiArrowUpRight /></a><a href="https://www.linkedin.com/in/san-pedro-kenneth-j-49933329a/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:hover:border-blue-700"><FiLinkedin /> LinkedIn <FiArrowUpRight /></a></div></div></div></div>;
 
-export default Home;
+export default About;
