@@ -9,7 +9,8 @@ const Hero = () => {
 
         <p className="dark:text-gray-300 xl11:text-[1.1rem]">
           An aspiring web developer from Binangonan, Rizal, Philippines. I’m
-          continuously learning and improving my skills in web development.
+          focused on building responsive, user-friendly interfaces while
+          continuously improving my development skills.
         </p>
 
         <div className="pt-6 xl11:pt-10">

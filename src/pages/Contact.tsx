@@ -40,7 +40,7 @@ const Contact = () => {
   return (
     <div className="min-h-[100vh] pt-[70px] flex">
       <Social />
-      <div className="flex flex-col gap-6 xl11:gap-0 items-center mx-auto justify-items-center px-6 pb-[100px]">
+      <div className="w-full flex flex-col gap-6 xl11:gap-0 items-center mx-auto justify-items-center px-6 pb-[100px]">
         <Header subtitle="Let's talk about it!" initial="Contact " title="Me" />
         <div className="pt-12 w-full">
           <form
@@ -80,7 +80,7 @@ const Contact = () => {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=kennethsanpedro1108@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="lg:w-[50%]  dark:bg-[#252525] bg-[#fff] px-12 py-2 rounded-lg flex items-center justify-center gap-4 cursor-pointer  dark:hover:bg-[#2e2e2e]"
+                className="lg:flex-1 dark:bg-[#252525] bg-[#fff] px-4 py-2 rounded-lg flex items-center justify-center gap-4 cursor-pointer  dark:hover:bg-[#2e2e2e]"
               >
                 <img
                   className="w-[25px] h-[25px]"
@@ -89,7 +89,7 @@ const Contact = () => {
                 />
                 <p className="text-[12px]">kennethsanpedro1108@gmail.com</p>
               </a>
-              <div className="lg:w-[50%] w-full dark:bg-[#252525] bg-[#fff] px-4 py-2 rounded-lg flex items-center justify-center gap-4">
+              <div className="lg:flex-1 w-full dark:bg-[#252525] bg-[#fff] px-4 py-2 rounded-lg flex items-center justify-center gap-4">
                 <img
                   className="w-[25px] h-[25px]"
                   src="https://img.icons8.com/?size=100&id=9730&format=png&color=3B82F6"

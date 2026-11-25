@@ -7,7 +7,7 @@ const SkillContainer = () => {
       <div
         className="
         flex-2
-        grid gap-8 place-items-center
+        grid gap-8 justify-items-center items-start
         grid-cols-3 sm:grid-cols-5 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4
         2xl:grid-cols-6
         md:px-0

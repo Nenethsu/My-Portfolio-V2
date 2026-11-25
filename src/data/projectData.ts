@@ -2,6 +2,7 @@ import portfolio from "../assets/portfolio.jpg";
 import portfolioV1 from "../assets/portfolioV1.jpg";
 import taytay from "../assets/taytay.jpg";
 import guideurself from "../assets/guideurself.jpg";
+import tinygpt from "../assets/tinygpt.jpg";
 
 export interface ProjectCardProps {
   image: string;
@@ -14,6 +15,17 @@ export interface ProjectCardProps {
 }
 
 export const projectsData = [
+  {
+    id: 5,
+    title: "Tiny GPT",
+    type: "AI",
+    description:
+      "A 4.8M-parameter language model I built and trained from scratch with PyTorch. It writes short stories one letter at a time.",
+    image: tinygpt,
+    link: "https://github.com/Nenethsu/tiny-gpt",
+    codelink: "https://github.com/Nenethsu/tiny-gpt",
+    date: "November 25, 2026",
+  },
   {
     id: 1,
     title: "Personal Portfolio V1",
@@ -33,7 +45,7 @@ export const projectsData = [
       "My second version portfolio website , created using ReactJS and TailwindCSS.",
     image: portfolio,
     link: "https://sanpedrokenneth.netlify.app/",
-    codelink: "https://github.com/Nenethss/My-Portfolio-V2",
+    codelink: "https://github.com/Nenethsu/My-Portfolio-V2",
     date: "May 23, 2023",
   },
   {

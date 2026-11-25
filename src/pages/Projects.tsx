@@ -23,7 +23,7 @@ const Projects = () => {
           title="Projects"
         />
         <Type activeType={activeType} onChangeType={setActiveType} />
-        <div className="md:px-20 px-6 h-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-4 pb-16 justify-items-center">
+        <div className="md:px-20 px-6 h-auto flex flex-wrap justify-center gap-8 pt-4 pb-16">
           {filteredProjects.map((project) => (
             <ProjectsCard
               key={project.id}

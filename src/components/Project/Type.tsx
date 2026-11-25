@@ -4,10 +4,10 @@ interface TypeProps {
 }
 
 const Type = ({ activeType, onChangeType }: TypeProps) => {
-  const filterTypes = ["All", "Frontend", "Fullstack"];
+  const filterTypes = ["All", "Frontend", "Fullstack", "AI"];
 
   return (
-    <div className="w-full h-auto flex flex-row gap-6 pt-4 justify-center">
+    <div className="w-full h-auto flex flex-row flex-wrap gap-3 sm:gap-6 px-6 pt-4 justify-center">
       {filterTypes.map((type) => (
         <button
           key={type}

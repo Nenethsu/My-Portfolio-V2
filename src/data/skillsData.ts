@@ -1,3 +1,9 @@
+import mysql from "../assets/mysql.svg";
+import obsidian from "../assets/obsidian.svg";
+import openai from "../assets/openai.svg";
+import playwright from "../assets/playwright.svg";
+import tanstack from "../assets/tanstack.svg";
+
 export interface SkillProps {
   img: string;
   skill: string;
@@ -60,5 +66,40 @@ export const skillsData = [
     id: 11,
     skill: "Tailwind CSS",
     img: "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000",
+  },
+  {
+    id: 12,
+    skill: "Prompt Engineering",
+    img: openai,
+  },
+  {
+    id: 13,
+    skill: "MySQL",
+    img: mysql,
+  },
+  {
+    id: 14,
+    skill: "React Native",
+    img: "https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000",
+  },
+  {
+    id: 15,
+    skill: "NativeWind",
+    img: "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000",
+  },
+  {
+    id: 16,
+    skill: "Obsidian",
+    img: obsidian,
+  },
+  {
+    id: 17,
+    skill: "Playwright",
+    img: playwright,
+  },
+  {
+    id: 18,
+    skill: "TanStack",
+    img: tanstack,
   },
 ];

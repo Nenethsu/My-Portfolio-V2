@@ -13,7 +13,7 @@ const ProjectsCard = ({
   return (
     <div
       className="py-4 px-6 rounded-lg min-w-[250px] max-w-[350px] shadow-[0_0_25px_rgba(0,0,0,0.2)]
- dark:bg-[#38383869] w-full h-auto flex flex-col gap-2  hover:translate-y-[-5px] transition-transform duration-300"
+ dark:bg-[#38383869] w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)] h-auto flex flex-col gap-2  hover:translate-y-[-5px] transition-transform duration-300"
     >
       <div className="flex flex-col items-center">
         <img
@@ -50,7 +50,7 @@ const ProjectsCard = ({
         <p className="font-bold text-[16px] ">{title}</p>
         <p className="text-[13px] ">{description}</p>
       </div>
-      <div>
+      <div className="mt-auto">
         <p className="text-[12px] ">Published: {date}</p>
       </div>
     </div>

@@ -12,17 +12,16 @@ const Hero = () => {
           </h1>
 
           <p className="dark:text-white xl11:text-[1.1rem]">
-            I have a strong interest in games and programming, which I often
-            explore during my free time primarily specialize in front-end web
-            development, where I focus on building responsive and user-friendly
-            interfaces.
+            I have a strong interest in games and programming, which I explore
+            during my free time, and I primarily specialize in front-end web
+            development.
           </p>
 
           <p className="dark:text-white xl11:text-[1.1rem]">
-            My programming journey became more focused this year as a
-            fourth-year IT student preparing for my internship. With graduation
-            approaching, I am motivated to continuously improve my skills and
-            meet the requirements of today’s technology-driven job market.
+            My programming journey became more focused as a fourth-year IT
+            student preparing for my internship. With graduation approaching,
+            I’m motivated to continuously improve my skills and contribute to
+            thoughtful, user-friendly experiences.
           </p>
 
           <h1 className="text-[25px] py-2 font-bold leading-snug">
@@ -39,7 +38,7 @@ const Hero = () => {
             <FaSquareFacebook className="w-full h-full" />
           </a>
           <a
-            href="https://github.com/Nenethss"
+            href="https://github.com/Nenethsu"
             target="_blank"
             className="rounded-[100%] h-[30px] w-[30px] hover:text-blue-500"
           >

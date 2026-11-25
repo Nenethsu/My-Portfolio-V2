@@ -9,7 +9,7 @@ export const socials = [
   },
   {
     icon: FaGithubSquare,
-    url: "https://github.com/Nenethss",
+    url: "https://github.com/Nenethsu",
   },
   {
     icon: AiFillInstagram,

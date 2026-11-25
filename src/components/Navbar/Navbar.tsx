@@ -83,7 +83,7 @@ const Navbar = () => {
           })}
         </ul>
 
-        <div className="flex-1 flex md:justify-end justify-between gap-4">
+        <div className="flex-1 flex justify-end items-center gap-4">
           {isDarkMode ? (
             <button onClick={() => setIsDarkMode(false)}>
               <FaSun className="text-white w-7 h-7" />
