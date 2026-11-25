@@ -1,1 +1,3 @@
-/* Smooth scrolling comes from Lenis (src/lib/motion.ts); CSS scroll-behavior: smooth would fight it. */
+html {
+  scroll-behavior: smooth;
+}
